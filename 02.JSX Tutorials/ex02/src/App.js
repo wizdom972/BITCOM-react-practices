@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 //*
 function App() {
@@ -19,12 +19,11 @@ function App() {
 
 //*/
 
-
 //
 // Error: Adjacent JSX elements must be wrapped in an enclosing tag
 //
 // function App() {
-//     return (    
+//     return (
 //         <h2>Ex02</h2>
 //         <p>특징 II: Sigle Root</p>
 //     )
@@ -34,8 +33,9 @@ function App() {
 //     return (
 //         React.createElement('h2', null, 'Ex02')
 //         React.createElement('p', null, '특징 II: Sigle Root')
-//     );    
+//     );
 // }
 //
+// -> 대신 <></> 로 감싸주면 된다.
 
-export {App};
+export { App };

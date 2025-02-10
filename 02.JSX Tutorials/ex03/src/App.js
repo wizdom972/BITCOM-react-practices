@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
+import Header from "./Header";
+import Contents from "./Contents";
+
+// <Header /> == React.createElement("div", null, Header, React.createElement);
 
 function App() {
     return (
         <div>
-            <h1>Ex03</h1>
-            <p>함수 컴포넌트</p>
+            <Header />
+            <Contents />
         </div>
     );
 }
 
-export {App};
+export { App };
