@@ -4,8 +4,8 @@ import TabItem from "./TabItem";
 function Tabs({ data }) {
     return (
         <ul>
-            {data.map((tab, index) => (
-                <TabItem key={index} name={tab.name} />
+            {data.map((tab) => (
+                <TabItem key={tab.no} name={tab.name} active={tab.active} />
             ))}
         </ul>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 
-function TabItem({ name }) {
-    return <li>{name}</li>;
+function TabItem({ name, active }) {
+    return <li className={active ? "active" : ""}>{name}</li>;
 }
 
 export default TabItem;
