@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledTabItem = styled.li`
@@ -21,8 +21,17 @@ const StyledTabItem = styled.li`
 `;
 
 function TabItem({ name, active }) {
+    const [select, setSelect] = useState(active);
+
     return (
-        <StyledTabItem className={active ? "active" : ""}>{name}</StyledTabItem>
+        <StyledTabItem
+            className={select ? "active" : ""}
+            onClick={() => {
+                setSelect(!select);
+            }}
+        >
+            {name}
+        </StyledTabItem>
     );
 }
 
