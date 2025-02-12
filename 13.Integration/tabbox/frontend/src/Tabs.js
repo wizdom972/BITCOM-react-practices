@@ -1,9 +1,10 @@
 import React from "react";
 import TabItem from "./TabItem";
+import { Tabs_Style } from "./assets/scss/Tabs.scss";
 
 function Tabs({ data }) {
     return (
-        <ul>
+        <ul className={Tabs_Style}>
             {data.map((tab) => (
                 <TabItem key={tab.no} name={tab.name} active={tab.active} />
             ))}
