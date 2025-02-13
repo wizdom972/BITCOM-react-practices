@@ -20,14 +20,14 @@ const StyledTabItem = styled.li`
     }
 `;
 
-function TabItem({ name, active }) {
+function TabItem({ no, name, active, selectTab }) {
     const [select, setSelect] = useState(active);
 
     return (
         <StyledTabItem
             className={select ? "active" : ""}
             onClick={() => {
-                setSelect(!select);
+                selectTab(no);
             }}
         >
             {name}
