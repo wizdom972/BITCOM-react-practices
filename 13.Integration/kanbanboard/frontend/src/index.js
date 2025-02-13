@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import KanbanBoard from "./KanbanBoard.js";
-import "../public/styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

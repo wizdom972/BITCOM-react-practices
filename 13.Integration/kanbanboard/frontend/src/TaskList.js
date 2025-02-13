@@ -1,21 +1,22 @@
 // src/components/TaskList.js
 import React from "react";
 import Task from "./Task";
+import { Task_List, Input_Add_Task } from "./assets/scss/TaskList.scss";
 
 function TaskList({ tasks }) {
     return (
-        <div className="Task_List">
+        <div className={Task_List}>
             <ul>
-                {tasks.map((task, index) => (
+                {tasks.map((task) => (
                     <Task
-                        key={index}
-                        text={task.text}
-                        isCompleted={task.isCompleted}
+                        key={task.no}
+                        text={task.name}
+                        isCompleted={task.done}
                     />
                 ))}
             </ul>
             <input
-                className="Input_Add_Task"
+                className={Input_Add_Task}
                 type="text"
                 placeholder="태스크 추가"
             />
