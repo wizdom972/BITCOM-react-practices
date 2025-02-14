@@ -20,7 +20,7 @@ function Card({ cardTitle, cardDetail, tasks }) {
             {isOpen && (
                 <div className="Card_Details">
                     {cardDetail}
-                    {tasks && tasks.length > 0 && <TaskList tasks={tasks} />}
+                    <TaskList tasks={tasks} />
                 </div>
             )}
         </div>
