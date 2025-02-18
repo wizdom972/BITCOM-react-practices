@@ -5,12 +5,14 @@ html {
         padding: 0;
     }
 
-    ul, ol, dl {
+    ul,
+    ol,
+    dl {
         list-style-type: none;
     }
 
     body {
-        font-family: 'Space Mono', monospace;
+        font-family: "Space Mono", monospace;
         font-size: 0.75em;
 
         :global(#root) {
@@ -25,23 +27,23 @@ html {
                     cursor: pointer;
                 }
 
-                div{
+                div {
                     display: flex;
                     flex-direction: row;
 
                     form {
                         margin: 10px 10px 10px 0;
                         border: 1px solid #aaa;
-                        width: 230px;
+                        width: 260px;
                         padding: 10px;
 
-                        input[type='file'] {
+                        input[type="file"] {
                             display: block;
                             margin: 10px 0 0 0;
                             padding: 3px 5px;
                         }
 
-                        input[type='submit'] {
+                        input[type="submit"] {
                             display: block;
                             margin: 10px 0 0 0;
                             padding: 3px 5px;
@@ -53,7 +55,7 @@ html {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
-	                align-content: stretch;
+                    align-content: stretch;
 
                     li {
                         display: flex;
@@ -64,8 +66,8 @@ html {
                         margin-bottom: 5px;
                         margin-right: 5px;
                         border: 1px solid #ccc;
-                        
-                        h4 {  
+
+                        h4 {
                             flex-grow: 0;
                             padding: 5px;
 
@@ -88,9 +90,9 @@ html {
                             display: flex;
                             flex-direction: column;
                             flex-grow: 0;
-                            
+
                             min-width: 60px;
-                            
+
                             padding: 5px;
 
                             span {
@@ -98,22 +100,22 @@ html {
 
                                 b {
                                     &:before {
-                                        content: '[';
+                                        content: "[";
                                     }
 
                                     &:after {
-                                        content: ']';
+                                        content: "]";
                                     }
                                 }
-                                
+
                                 i {
                                     text-align: left;
                                 }
                             }
 
-                            img {       
-                                display:  block;
-                                margin-top: 5px;;
+                            img {
+                                display: block;
+                                margin-top: 5px;
 
                                 height: 50px;
                                 width: 50px;
@@ -123,5 +125,5 @@ html {
                 }
             }
         }
-    } 
+    }
 }
