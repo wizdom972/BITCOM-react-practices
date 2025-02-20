@@ -8,16 +8,19 @@ import About from "./component/About";
 import Error404 from "./component/Error404";
 
 import "./assets/scss/App.scss";
+import SiteLayout from "./layout/SiteLayout";
 
 export default function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/guestbook" element={<Guestbook />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<Error404 />} />
+                <Route path="/" element={<SiteLayout />}>
+                    <Route path="" element={<Main />} />
+                    <Route path="gallery" element={<Gallery />} />
+                    <Route path="guestbook" element={<Guestbook />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="*" element={<Error404 />} />
+                </Route>
             </Routes>
         </Router>
     );

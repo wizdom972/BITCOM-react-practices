@@ -7,8 +7,26 @@ import Error404 from "./component/Error404";
 const Router = () => {
     const [route, setRoute] = useState({
         page: window.location.href.substring(
-            window.location.target.href.lastIndexOf("/")
+            window.location.href.lastIndexOf("/")
         ),
+    });
+
+    useEffect(() => {
+        const pushStateHandler = (e) => {
+            setRoute(e.detail ? e.detail : { page: "/" });
+        };
+
+        const popStateHandler = (e) => {
+            setRoute(e.state ? e.state : { page: "/" });
+        };
+
+        window.addEventListener("pushState", pushStateHandler);
+        window.addEventListener("popState", popStateHandler);
+
+        return () => {
+            window.removeEventListener("pushState", pushStateHandler);
+            window.removeEventListener("popState", popStateHandler);
+        };
     });
 
     let component = null;
@@ -37,24 +55,27 @@ export default function App() {
 
         const url = e.target.href.substring(e.target.href.lastIndexOf("/"));
         window.history.pushState({ page: url }, e.target.txt, url);
-        window.dispatchEvent(new Event("pushState"));
+
+        window.dispatchEvent(
+            new CustomEvent("pushState", { detail: { page: url } })
+        );
     };
 
     return (
         <div>
             <ul>
                 <li>
-                    <a href="/#/" onClick={clickHandler}>
+                    <a href="/" onClick={clickHandler}>
                         main
                     </a>
                 </li>
                 <li>
-                    <a href="/#/guestbook" onClick={clickHandler}>
+                    <a href="/guestbook" onClick={clickHandler}>
                         guestbook
                     </a>
                 </li>
                 <li>
-                    <a href="/#/gallery" onClick={clickHandler}>
+                    <a href="/gallery" onClick={clickHandler}>
                         gallery
                     </a>
                 </li>
